@@ -21,19 +21,21 @@ h2 {
 }
 
 h3 {
-    font-size: 100%;
+    font-size: 125%;
+    font-weight: 400;
+    color: #fff;
 }
 
 h4 {
-    font-size: 75%;
+    font-size: 100%;
 }
 
 h5 {
-    font-size: 62.5%;
+    font-size: 75%;
 }
 
 h6 {
-    font-size: 50%;
+    font-size: 62.5%;
 }
 
 header {
@@ -46,8 +48,8 @@ nav {
     height: 20vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 100px;
+    justify-content: space-between;
+    padding: 0 100px;
 }
 
 .logo {
@@ -78,7 +80,86 @@ nav {
     &::after {
         filter: blur(30px);
     }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 80px;
+    height: 80px;
+    background-color: #000;
+    padding: 0;
+    margin: 0;
+    transition: .3s .2s;
+    box-shadow: 0 0 10px 2px #2a2a2a;
+    cursor: pointer;
     
+    &:hover {
+        width: 70%;
+        transition: .2s;
+        border-radius: 100px 0 0 100px;
+    }
+}
+
+.hamburger {
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    transition: all .5s ease;
+    margin-right: 20px;
+    
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        background-color: #2a2a2a;
+        border-radius: 5px;
+        transition: all .5s ease;
+    }
+    
+    &::before {
+        transform: translateY(-12px);
+    }
+    
+    &::after {
+        transform: translateY(12px);
+    }
+}
+
+.navbar:hover {
+    box-shadow: 0 0 10px 2px #6a6a6a;
+    > .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        background-color: #6a6a6a;
+        transition: all .5s ease;
+    }
+}
+
+.slider_menu {
+    display: flex;
+    transition: .2s;
+    margin: 0 100px 0 0;
+    visibility: hidden;
+    transform: translateY(-80px);
+    
+    > a {
+        text-decoration: none;
+        margin: 0 10px;
+    }
+}
+
+.navbar:hover {
+    > .slider_menu {
+        visibility: visible;
+        transition-delay: .3s;
+        transform: translateY(0);
+    }
 }
 
 main {
@@ -110,22 +191,27 @@ main {
     
         &:nth-of-type(2) {
             background: url(./img/shirts.jpg) no-repeat 50% / cover;
+            filter: grayscale(20%) brightness(60%);
         }
     
         &:nth-of-type(3) {
             background: url(./img/t-shirts.jpg) no-repeat 50% / cover;
+            filter: grayscale(20%) brightness(60%);
         }
     
         &:nth-of-type(4) {
             background: url(./img/ls-t-shirts.jpg) no-repeat 50% / cover;
+            filter: grayscale(20%) brightness(60%);
         }
     
         &:nth-of-type(5) {
             background: url(./img/pants.jpg) no-repeat 50% / cover;
+            filter: grayscale(20%) brightness(60%);
         }
     
         &:nth-of-type(6) {
             background: url(./img/shorts.jpg) no-repeat 50% / cover;
+            filter: grayscale(20%) brightness(60%);
         }
         
         > a {
@@ -161,6 +247,7 @@ main {
             flex: 0 0 300px;
             box-shadow: 1px 3px 15px #7645d8;
             transform: translateY(-30px);
+            filter: grayscale(0%) brightness(100%);
         }
         
         &:hover .category_content {
@@ -174,4 +261,13 @@ main {
 footer {
     width: 100%;
     height: 10vh;
+}
+
+
+/* for desktops with small resolution */
+@media only screen and (max-width: 1279px) {
+    .product_container img {
+        min-width: 200px;
+        max-width: 900px;
+    }
 }
