@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: sans-serif;
+    z-index: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Ubuntu Mono;
+}
+
+h1 {
+    font-size: 150%;
+}
+
+h2 {
+    font-size: 125%;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: 100%;
+}
+
+h4 {
+    font-size: 75%;
+}
+
+h5 {
+    font-size: 62.5%;
+}
+
+h6 {
+    font-size: 50%;
+}
+
+header {
+    width: 100%;
+    height: 15vh;
+}
+
+main {
+    min-height: 70vh;
+    display: grid;
+    place-items: center;
+    font-weight: 400;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    gap: 20px;
+
+    > .category_container {
+        flex: 0 0 150px;
+        border-radius: 0.5rem;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        box-shadow: 1px 5px 15px #1e0e3e;
+        position: relative;
+        overflow: hidden;
+    
+        &:nth-of-type(1) {
+            background: url(./img/hoodies.jpg) no-repeat 50% / cover;
+        }
+    
+        &:nth-of-type(2) {
+            background: url(./img/shirts.jpg) no-repeat 50% / cover;
+        }
+    
+        &:nth-of-type(3) {
+            background: url(./img/t-shirts.jpg) no-repeat 50% / cover;
+        }
+    
+        &:nth-of-type(4) {
+            background: url(./img/ls-t-shirts.jpg) no-repeat 50% / cover;
+        }
+    
+        &:nth-of-type(5) {
+            background: url(./img/pants.jpg) no-repeat 50% / cover;
+        }
+    
+        &:nth-of-type(6) {
+            background: url(./img/shorts.jpg) no-repeat 50% / cover;
+        }
+
+        .category_content {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            opacity: 0;
+            flex-direction: column;
+            height: 100%;
+            justify-content: flex-end;
+            background: rgb(2, 2, 46);
+            background: linear-gradient(0deg, rgba(2, 2, 46, 0.6755077030812324) 0%, rgba(255, 255, 255, 0) 100%);
+            transform: translateY(100%);
+            transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+            visibility: hidden;
+    
+            span {
+                display: block;
+                margin-top: 5px;
+                font-size: 1rem;
+            }
+        }
+        
+        &:hover {
+            flex: 0 0 300px;
+            box-shadow: 1px 3px 15px #7645d8;
+            transform: translateY(-30px);
+        }
+        
+        &:hover .category_content {
+            opacity: 1;
+            transform: translateY(0%);
+            visibility: visible;
+        }
+    }
+}
+
+/*
+.hoodies,
+.shirts,
+.t-shirts,
+.ls-t-shirts, 
+.pants, 
+.shorts {
+    width: 32%;
+    position: relative;
+    text-align: center;
+    border: 2px solid white;
+    margin-bottom: 50px;
+}
+
+.hoodies img,
+.shirts img,
+.t-shirts img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .5s ease-in-out;
+}
+
+.hoodies img:hover,
+.shirts img:hover,
+.t-shirts img:hover {
+    opacity: .2;
+    transition: all .5s ease-in-out;
+}
+
+.hoodies p,
+.shirts p {
+    align-items: center;
+    background-color: #000;
+    display: flex;
+    height: 75px;
+    letter-spacing: 2px;
+    justify-content: center;
+    opacity: 1;
+}
+*/
+
+footer {
+    width: 100%;
+    height: 15vh;
+}
+
+
+/* for desktops with small resolution */
+@media only screen and (max-width: 1279px) {
+    .product_container img {
+        min-width: 200px;
+        max-width: 900px;
+    }
+}
+
